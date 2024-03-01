@@ -2,6 +2,7 @@ package com.example.inglih;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.audiofx.Visualizer;
 import android.os.Bundle;
@@ -67,8 +68,18 @@ public class MainActivity5 extends AppCompatActivity {
                 forwardAudio();
             }
         });
-    }
 
+        // Находим кнопку button4
+        Button button4 = findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Переходим на MainActivity6
+                Intent intent = new Intent(MainActivity5.this, MainActivity6.class);
+                startActivity(intent);
+            }
+        });
+    }
     private void setupVisualizer() {
         mediaPlayer = MediaPlayer.create(this, R.raw.possumsound);
         if (mediaPlayer != null) {

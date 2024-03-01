@@ -37,7 +37,6 @@ public class MainActivity4 extends AppCompatActivity {
     private int incorrectAnswers = 0;
     private boolean isInputEnabled = true;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
@@ -48,6 +47,17 @@ public class MainActivity4 extends AppCompatActivity {
         textViewQuestionNumber = findViewById(R.id.textViewQuestionNumber);
 
         showQuestion();
+
+        // Находим кнопку button5
+        Button button5 = findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Переходим на MainActivity6
+                Intent intent = new Intent(MainActivity4.this, MainActivity6.class);
+                startActivity(intent);
+            }
+        });
 
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override

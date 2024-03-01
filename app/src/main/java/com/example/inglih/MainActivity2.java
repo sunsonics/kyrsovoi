@@ -21,7 +21,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Создаем Intent для перехода на другую активность
-                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+                Intent intent = new Intent(MainActivity2.this, MainActivity6.class);
                 startActivity(intent); // Запускаем другую активность
             }
         });

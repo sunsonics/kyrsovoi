@@ -56,6 +56,17 @@ public class MainActivity3 extends AppCompatActivity {
         // Показываем первый вопрос
         showQuestion();
 
+        // Находим кнопку button5
+        Button button5 = findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Переходим на MainActivity6
+                Intent intent = new Intent(MainActivity3.this, MainActivity6.class);
+                startActivity(intent);
+            }
+        });
+
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
