@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Arrays;
+
 public class MainActivity3 extends AppCompatActivity {
     private TextView textViewQuestion;
     private EditText editTextAnswer;
@@ -18,25 +20,27 @@ public class MainActivity3 extends AppCompatActivity {
 
     private String[] questions = {
             "Как переводится слово 'apple'?",
-            "Как переводится слово 'cat'?",
+            "Как переводится слово 'work'?",
+            "Как переводится слово 'sky'?",
             "Как переводится слово 'book'?",
-            "Как переводится слово 'dog'?",
-            "Как переводится слово 'house'?",
-            "Как переводится слово 'pen'?",
+            "Как переводится слово 'tree'?",
+            "Как переводится слово 'travel'?",
+            "Как переводится слово 'sun'?",
             "Как переводится слово 'table'?",
-            "Как переводится слово 'computer'?",
-            "Как переводится слово 'student'?"
+            "Как переводится слово 'friend'?",
+            "Как переводится слово 'water'?"
     };
-    private String[] correctAnswers = {
-            "яблоко",
-            "кот",
-            "книга",
-            "собака",
-            "дом",
-            "ручка",
-            "стол",
-            "компьютер",
-            "ученик"
+    private String[][] correctAnswers = {
+            {"яблоко", "яблоки","яблочко"},
+            {"работа","работать"},
+            {"небо","Небо"},
+            {"книга", "книжка", "книжки"},
+            {"дерево", "древо"},
+            {"отдых", "путшествие"},
+            {"солнце", "солнышко"},
+            {"стол","таблица"},
+            {"друг", "приятель", "дружок"},
+            {"вода", "водичка"}
     };
     private int currentQuestionIndex = 0;
     private int totalQuestions = 0;
@@ -104,16 +108,25 @@ public class MainActivity3 extends AppCompatActivity {
         totalQuestions++;
 
         String userAnswer = editTextAnswer.getText().toString().trim();
-        String correctAnswer = correctAnswers[currentQuestionIndex];
+        String[] correctAnswersForCurrentQuestion = correctAnswers[currentQuestionIndex];
 
         if (!isInputEnabled) {
             // Если ввод текста заблокирован, не проверяем ответ
             Toast.makeText(this, "Ваш уровень английского: A1 Beginner. Ввод заблокирован.", Toast.LENGTH_LONG).show();
         } else {
-            if (userAnswer.equalsIgnoreCase(correctAnswer)) {
+            boolean isCorrect = false;
+            for (String correctAnswer : correctAnswersForCurrentQuestion) {
+                if (userAnswer.equalsIgnoreCase(correctAnswer)) {
+                    isCorrect = true;
+                    break;
+                }
+            }
+
+            if (isCorrect) {
                 Toast.makeText(this, "Верно!", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Неверно. Правильный ответ: " + correctAnswer, Toast.LENGTH_SHORT).show();
+                String correctAnswersString = Arrays.toString(correctAnswersForCurrentQuestion);
+                Toast.makeText(this, "Неверно. Правильный ответ(ы): " + correctAnswersString, Toast.LENGTH_SHORT).show();
                 incorrectAnswers++;
             }
         }

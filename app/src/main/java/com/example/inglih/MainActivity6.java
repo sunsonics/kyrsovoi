@@ -32,13 +32,21 @@ public class MainActivity6 extends AppCompatActivity {
                 }
             });
         }
-
+        Button buttonSubmit4 = findViewById(R.id.buttonSubmit4);
+        buttonSubmit4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Создаем намерение для запуска MainActivity8
+                Intent intent = new Intent(MainActivity6.this, MainActivity8.class);
+                startActivity(intent); // Запускаем MainActivity8
+            }
+        });
         if (button6 != null) {
             button6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     // Переход на MainActivity5
-                    Intent intent = new Intent(MainActivity6.this, MainActivity5.class);
+                    Intent intent = new Intent(MainActivity6.this, MainActivity11.class);
                     startActivity(intent);
                 }
             });

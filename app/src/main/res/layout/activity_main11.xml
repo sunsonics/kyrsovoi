@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5F8FD"
+    tools:context=".MainActivity5">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Ваши EditText элементы здесь -->
+
+            <TextView
+                android:id="@+id/textViewQuestionNumber"
+                android:layout_width="371dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="Аудирование"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buttonPlayAudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@android:drawable/ic_media_play"
+                android:drawableStart="@android:drawable/ic_media_play"
+                android:drawableLeft="@android:drawable/ic_media_play"
+                android:drawableTop="@android:drawable/ic_media_play"
+                android:drawableEnd="@android:drawable/ic_media_play"
+                android:drawableRight="@android:drawable/ic_media_play"
+                android:drawableBottom="@android:drawable/ic_media_play"
+                android:foreground="@android:drawable/ic_media_play"
+                android:scrollbarTrackHorizontal="@android:drawable/ic_media_play"
+                android:scrollbarTrackVertical="@android:drawable/ic_media_play"
+                android:text="Play"
+                android:textColorHighlight="#E4F7FC"
+                android:textColorLink="#E4F7FC"
+                app:icon="@android:drawable/ic_media_play" />
+
+            <Button
+                android:id="@+id/buttonStopAudio"
+                android:layout_width="103dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:background="@android:drawable/ic_media_pause"
+                android:baselineAligned="false"
+                android:foreground="@android:drawable/ic_media_pause"
+                android:scrollbarTrackHorizontal="@android:drawable/ic_media_pause"
+                android:scrollbarTrackVertical="@android:drawable/ic_media_pause"
+                app:icon="@android:drawable/ic_media_pause" />
+
+            <Button
+                android:id="@+id/buttonRewind"
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:background="@android:drawable/ic_media_rew"
+                android:foreground="@android:drawable/ic_media_rew"
+                android:text="Rewind" />
+
+            <Button
+                android:id="@+id/buttonForward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:background="@android:drawable/ic_media_ff"
+                android:foreground="@android:drawable/ic_media_ff"
+                android:text="Forward" />
+
+            <com.example.inglih.AudioVisualizerView
+                android:id="@+id/visualizerView"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginTop="8dp" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text=" Listen to a part of an audio guide in a museum of modern arts. Decide whether the statements 1–10 are True (A) or False (B) according to the text you hear.The narrator says that:"
+                android:textAlignment="center"
+                android:textSize="19sp" />
+
+            <Button
+                android:id="@+id/buttonSubmit2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#57B8F8"
+                android:text="Отправить" />
+
+            <EditText
+                android:id="@+id/editTextAnswer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите ваш ответ" />
+
+            <EditText
+                android:id="@+id/editTextAnswer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите ваш ответ" />
+
+            <EditText
+                android:id="@+id/editTextAnswer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите ваш ответ" />
+
+            <EditText
+                android:id="@+id/editTextAnswer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите ваш ответ" />
+
+            <EditText
+                android:id="@+id/editTextAnswer5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите ваш ответ" />
+
+            <EditText
+                android:id="@+id/editTextAnswer6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите ваш ответ" />
+
+            <EditText
+                android:id="@+id/editTextAnswer7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите ваш ответ" />
+
+            <EditText
+                android:id="@+id/editTextAnswer8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите ваш ответ" />
+
+            <EditText
+                android:id="@+id/editTextAnswer9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите ваш ответ" />
+
+            <EditText
+                android:id="@+id/editTextAnswer10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите ваш ответ" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,3 +1,46 @@
 <resources>
-    <string name="app_name">inglih</string>
+    <string name="app_name">Inglih</string>
+    <string name="question_number">Вопрос %1$d</string><!-- Используйте нужное вам название приложения -->
+    <string name="inglih">YourAppName</string>
+    <string-array name="questions">
+        <item>Прослушайте и ответьте, куда следует отправиться Джиму?</item>
+        <item>Что случилось с Джимом?</item>
+        <item>Каким видом деятельности занимается Дэвид?</item>
+        <item>Какую награду получила Мэри?</item>
+        <item>О чём попросили Мари?</item>
+
+    </string-array>
+
+    <string-array name="answers1">
+        <item>банк</item>
+        <item>парк аттракционов</item>
+        <item>автосервис</item>
+        <item>кинотеатр</item>
+    </string-array>
+
+    <string-array name="answers2">
+        <item>он сегодня не завтракал</item>
+        <item>он выиграл лотерею</item>
+        <item>он сломал ногу</item>
+        <item>он победил в соревнованиях</item>
+    </string-array>
+    <string-array name="answers3">
+        <item>информационным</item>
+        <item>научным</item>
+        <item>творческим</item>
+        <item>трудовым</item>
+    </string-array>
+    <string-array name="answers4">
+        <item>нобелевскую премию</item>
+        <item>премию Оскар</item>
+        <item>призовой фонд</item>
+        <item>почетная грамота</item>
+    </string-array>
+    <string-array name="answers5">
+        <item>помочь с переездом</item>
+        <item>подать документы</item>
+        <item>не шуметь</item>
+        <item>подготовить к тесту</item>
+    </string-array>
+
 </resources>

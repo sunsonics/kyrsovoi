@@ -26,9 +26,9 @@ public class MainActivity4 extends AppCompatActivity {
             "Переведите предложение: 'he has a cat.'"
     };
     private String[][] correctAnswers = {
-            {"это книга", "книга", "книгу", "книге"},
+            {"это книга", "это книга", "книгу", "книге"},
             {"я хочу пойти домой", "хочу пойти домой", "хочу домой", "домой хочу"},
-            {"она студентка", "студентка", "студент", "она студент"},
+            {"она студентка", "студентка", "студент", "она студент","она ученик"},
             {"они играют в футбол", "играют в футбол", "футбол играют", "в футбол играют"},
             {"у него есть кот", "есть кот", "кот у него", "у него кот"}
     };
@@ -80,6 +80,8 @@ public class MainActivity4 extends AppCompatActivity {
             if (errorPercentage > 0.5) {
                 Toast.makeText(this, "Ваш уровень английского: A2 Pre-Intermediate", Toast.LENGTH_LONG).show();
                 isInputEnabled = false;
+                Intent intent = new Intent(MainActivity4.this, MainActivity6.class);
+                startActivity(intent);
             } else {
                 Intent intent = new Intent(MainActivity4.this, MainActivity5.class);
                 startActivity(intent);
@@ -102,7 +104,7 @@ public class MainActivity4 extends AppCompatActivity {
         }
 
         if (!isInputEnabled) {
-            Toast.makeText(this, "Ваш уровень английского: A1 Beginner. Ввод заблокирован.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Ваш уровень английского: A2 Pre-Intermediate. Ввод заблокирован.", Toast.LENGTH_LONG).show();
         } else {
             if (isCorrect) {
                 Toast.makeText(this, "Верно!", Toast.LENGTH_SHORT).show();

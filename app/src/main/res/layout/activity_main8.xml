@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6F9FE">
+
+    <!-- Кнопка "Назад" -->
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="324dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="700dp"
+        android:background="#00F4EFEF"
+        android:backgroundTint="#57B7F7"
+        android:drawableStart="@drawable/_89473"
+        android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
+        android:drawableTop="@android:drawable/ic_menu_close_clear_cancel"
+        android:drawableEnd="@android:drawable/ic_menu_close_clear_cancel"
+        android:drawableRight="@android:drawable/ic_menu_close_clear_cancel"
+        android:drawableBottom="@android:drawable/ic_menu_close_clear_cancel"
+        android:foreground="@android:drawable/ic_menu_close_clear_cancel"
+        android:text="Button"
+        app:icon="@drawable/_89473"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:cacheColorHint="#638998" />
+
+</RelativeLayout>

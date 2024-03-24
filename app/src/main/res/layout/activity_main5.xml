@@ -6,21 +6,142 @@
     android:layout_height="match_parent"
     android:background="#E5F8FD"
     tools:context=".MainActivity5">
+    <!-- Добавляем флажки для вариантов ответа -->
 
+    <TextView
+        android:id="@+id/textViewQuestionNumber"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="315dp"
+        android:layout_marginEnd="110dp"
+        android:text="Вопрос 1"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/buttonPlayAudio"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar2"
+        android:layout_width="260dp"
+        android:layout_height="51dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="483dp"
+        android:background="@drawable/cnop"
+        android:clickable="false"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="107dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="559dp"
+        android:background="#4A57B7F7"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="153dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="178dp"
+        android:background="#4A57B7F7"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <CheckBox
+        android:id="@+id/checkbox_option1"
+        android:layout_width="183dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="262dp"
-        android:layout_marginEnd="203dp"
-        android:layout_marginBottom="445dp"
-        android:backgroundTint="#E4F7FC"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="431dp"
+        android:layout_marginEnd="209dp"
+        android:layout_marginBottom="252dp"
+        android:buttonTint="@color/pip"
+        android:text="банк"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_option2"
+        android:layout_width="229dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="504dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="179dp"
+        android:buttonTint="@color/pip"
+        android:text="парк аттракционов "
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_option3"
+        android:layout_width="186dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="227dp"
+        android:layout_marginTop="431dp"
+        android:layout_marginEnd="-2dp"
+        android:layout_marginBottom="252dp"
+        android:buttonTint="@color/pip"
+        android:text="кинотеатр"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_option4"
+        android:layout_width="186dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="223dp"
+        android:layout_marginTop="504dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="179dp"
+        android:buttonTint="@color/pip"
+        android:text="автосервис"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/buttonPlayAudio"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="489dp"
+        android:backgroundTint="#DAEFF7"
         android:drawableStart="@android:drawable/ic_media_play"
         android:drawableLeft="@android:drawable/ic_media_play"
         android:drawableTop="@android:drawable/ic_media_play"
@@ -46,6 +167,7 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+
     <Button
         android:id="@+id/button4"
         android:layout_width="77dp"
@@ -54,10 +176,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
+        android:layout_marginStart="1dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="334dp"
-        android:layout_marginBottom="684dp"
+        android:layout_marginEnd="332dp"
+        android:layout_marginBottom="683dp"
         android:background="#00F4EFEF"
         android:backgroundTint="#57B7F7"
         android:drawableStart="@drawable/_89473"
@@ -73,34 +195,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="201dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="190dp"
-        android:background="#4A57B7F7"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
-
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar3"
-        android:layout_width="match_parent"
-        android:layout_height="201dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="190dp"
-        android:background="#4A57B7F7"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
 
     <Button
         android:id="@+id/buttonSubmit2"
@@ -119,16 +213,16 @@
     <Button
         android:id="@+id/buttonStopAudio"
         android:layout_width="wrap_content"
-        android:layout_height="26dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="445dp"
-        android:backgroundTint="#E4F7FC"
+        android:layout_marginStart="193dp"
+        android:layout_marginTop="227dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="488dp"
+        android:backgroundTint="#DAEFF7"
         android:foreground="@android:drawable/ic_media_pause"
         android:scrollbarTrackHorizontal="@android:drawable/ic_media_pause"
         android:scrollbarTrackVertical="@android:drawable/ic_media_pause"
@@ -136,33 +230,33 @@
 
     <Button
         android:id="@+id/buttonRewind"
-        android:layout_width="wrap_content"
-        android:layout_height="26dp"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="262dp"
-        android:layout_marginEnd="292dp"
-        android:layout_marginBottom="443dp"
-        android:backgroundTint="#00E4F7FC"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="227dp"
+        android:layout_marginEnd="271dp"
+        android:layout_marginBottom="488dp"
+        android:backgroundTint="#DAEFF7"
         android:foreground="@android:drawable/ic_media_rew"
         android:text="Rewind" />
 
     <Button
         android:id="@+id/buttonForward"
-        android:layout_width="wrap_content"
-        android:layout_height="27dp"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="278dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginEnd="59dp"
-        android:layout_marginBottom="444dp"
-        android:backgroundTint="#E4F7FC"
+        android:layout_marginStart="262dp"
+        android:layout_marginTop="227dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginBottom="486dp"
+        android:backgroundTint="#DAEFF7"
         android:foreground="@android:drawable/ic_media_ff"
         android:scrollbarTrackHorizontal="@android:drawable/ic_media_ff"
         android:text="Forward" />
@@ -175,22 +269,38 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="-5dp"
-        android:layout_marginTop="134dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="548dp" />
+        android:layout_marginStart="-4dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="577dp" />
 
     <SeekBar
         android:id="@+id/seekBar"
-        android:layout_width="356dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="235dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="478dp" />
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="193dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="520dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="383dp"
+        android:layout_height="59dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="357dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="315dp"
+        android:text="Прослушайте и ответе, куда следует                               отправиться  Джиму?"
+        android:textAlignment="center"
+        android:textSize="19sp" />
 
 </RelativeLayout>
