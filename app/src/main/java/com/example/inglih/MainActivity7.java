@@ -18,6 +18,7 @@ public class MainActivity7 extends AppCompatActivity {
     private Button buttonSubmit;
     private TextView textViewQuestionNumber;
     private TextView textViewExplanation;
+    private Button button5;
 
     private String[] questions = {
             "Choose the correct form of the verb: She ___ (go) to the store every day.",
@@ -79,7 +80,15 @@ public class MainActivity7 extends AppCompatActivity {
 
         // Show the first question
         showQuestion();
-
+        Button button5 = findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Переходим на MainActivity6
+                Intent intent = new Intent(MainActivity7.this, MainActivity6.class);
+                startActivity(intent);
+            }
+        });
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,6 +114,7 @@ public class MainActivity7 extends AppCompatActivity {
                 Toast.makeText(this, "Ваш уровень B2 Upper-Intermediate", Toast.LENGTH_LONG).show();
                 isInputEnabled = false;
                 Intent intent = new Intent(MainActivity7.this, MainActivity6.class);
+                intent.putExtra("userLevel", "B2 Upper-Intermediate"); // Передача уровня
                 startActivity(intent);
             } else {
                 Intent intent = new Intent(MainActivity7.this, MainActivity10.class);

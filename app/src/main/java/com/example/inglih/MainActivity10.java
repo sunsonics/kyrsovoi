@@ -75,7 +75,7 @@ public class MainActivity10 extends AppCompatActivity {
         checkboxOption4 = findViewById(R.id.checkbox_option4);
 
         buttonPlayAudio = findViewById(R.id.buttonPlayAudio);
-        buttonStopAudio = findViewById(R.id.buttonStopAudio);
+        buttonStopAudio = findViewById(R.id.buttonPlayAudio);
         buttonRewind = findViewById(R.id.buttonRewind);
         buttonForward = findViewById(R.id.buttonForward);
         visualizerView = findViewById(R.id.visualizerView);
@@ -332,6 +332,7 @@ public class MainActivity10 extends AppCompatActivity {
                 updateQuestionAndAnswers(); // Update question and answers
             } else {
                 Intent intent = new Intent(MainActivity10.this, MainActivity6.class);
+                intent.putExtra("userLevel", "C1 Advanced"); // Передача уровня
                 startActivity(intent);
                 Toast.makeText(this, "Ваш уровень английского C1 Advanced. ", Toast.LENGTH_LONG).show();
             }
@@ -343,6 +344,7 @@ public class MainActivity10 extends AppCompatActivity {
             if (incorrectAnswerCount >= MAX_INCORRECT_ANSWERS) {
                 Toast.makeText(this, "Ваш уровень английского B2 Upper-Intermediate. ", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(MainActivity10.this, MainActivity6.class);
+                intent.putExtra("userLevel", "B2 Upper-Intermediate"); // Передача уровня
                 startActivity(intent);
             }
         }

@@ -20,12 +20,6 @@
         android:layout_marginBottom="684dp"
         android:background="#00F4EFEF"
         android:backgroundTint="#57B7F7"
-        android:drawableStart="@drawable/_89473"
-        android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
-        android:drawableTop="@android:drawable/ic_menu_close_clear_cancel"
-        android:drawableEnd="@android:drawable/ic_menu_close_clear_cancel"
-        android:drawableRight="@android:drawable/ic_menu_close_clear_cancel"
-        android:drawableBottom="@android:drawable/ic_menu_close_clear_cancel"
         android:foreground="@android:drawable/ic_menu_close_clear_cancel"
         android:text="Button"
         app:icon="@drawable/_89473"
@@ -72,6 +66,7 @@
         android:layout_marginTop="342dp"
         android:layout_marginEnd="3dp"
         android:text="Вопрос: Как переводится слово 'apple'?"
+        android:textColor="#000000"
         android:textSize="20sp" />
 
     <EditText

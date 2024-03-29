@@ -33,6 +33,7 @@ public class MainActivity5 extends AppCompatActivity {
     private AudioVisualizerView visualizerView;
     private int currentQuestionNumber = 1;
     private TextView textViewQuestionNumber;
+    private static final int REQUEST_CODE_MAIN_ACTIVITY_5 = 5;
 
     private boolean isSeekBarTracking = false;
     private int[] questionAudios = {R.raw.bank, R.raw.noga, R.raw.pevez, R.raw.nob, R.raw.math};
@@ -582,8 +583,9 @@ public class MainActivity5 extends AppCompatActivity {
         // If the user has answered incorrectly three or more times, redirect to MainActivity6
         if (incorrectAnswersCount >= 3) {
             Intent intent = new Intent(MainActivity5.this, MainActivity6.class);
+            intent.putExtra("userLevel", "B1 Intermediate"); // Передача уровня
             startActivity(intent);
-            finish(); // Close the current activity
+            finish();
             Toast.makeText(this, "Ваш уровень B1 Intermediate.", Toast.LENGTH_SHORT).show();
         } else {
             if (currentQuestionIndex < questions.length - 1) {

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5F8FD"
+    tools:context=".MainActivity5">
+    <!-- Добавляем флажки для вариантов ответа -->
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar2"
+        android:layout_width="260dp"
+        android:layout_height="51dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="483dp"
+        android:background="@drawable/cnop"
+        android:clickable="false"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="107dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="559dp"
+        android:background="#4A57B7F7"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="313dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="100dp"
+        android:background="#4A57B7F7"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <CheckBox
+        android:id="@+id/checkbox_option1"
+        android:layout_width="377dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="577dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="106dp"
+        android:buttonTint="@color/pip"
+        android:text="банк"
+        android:textSize="20sp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_option2"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="430dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="253dp"
+        android:buttonTint="@color/pip"
+        android:text="парк аттракционов "
+        android:textSize="20sp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_option3"
+        android:layout_width="385dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="351dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="332dp"
+        android:buttonTint="@color/pip"
+        android:text="кинотеатр"
+        android:textSize="20sp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_option4"
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="506dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="177dp"
+        android:buttonTint="@color/pip"
+        android:text="автосервис"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/buttonPlayAudio"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="489dp"
+        android:backgroundTint="#DAEFF7"
+        android:drawableStart="@android:drawable/ic_media_play"
+        android:drawableLeft="@android:drawable/ic_media_play"
+        android:drawableTop="@android:drawable/ic_media_play"
+        android:drawableEnd="@android:drawable/ic_media_play"
+        android:drawableRight="@android:drawable/ic_media_play"
+        android:drawableBottom="@android:drawable/ic_media_play"
+        android:foreground="@android:drawable/ic_media_play"
+        android:scrollbarTrackHorizontal="@android:drawable/ic_media_play"
+        android:text="Play"
+        app:icon="@android:drawable/ic_media_play" />
+
+    <TextView
+        android:id="@+id/textViewTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:text="Тест на уровень английского"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="332dp"
+        android:layout_marginBottom="683dp"
+        android:background="#00F4EFEF"
+        android:backgroundTint="#57B7F7"
+        android:drawableStart="@drawable/_89473"
+        android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
+        android:drawableTop="@android:drawable/ic_menu_close_clear_cancel"
+        android:drawableEnd="@android:drawable/ic_menu_close_clear_cancel"
+        android:drawableRight="@android:drawable/ic_menu_close_clear_cancel"
+        android:drawableBottom="@android:drawable/ic_menu_close_clear_cancel"
+        android:foreground="@android:drawable/ic_menu_close_clear_cancel"
+        android:text="Button"
+        app:icon="@drawable/_89473"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSubmit2"
+        android:layout_width="295dp"
+        android:layout_height="62dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="18dp"
+        android:backgroundTint="#57B8F8"
+        android:text="Отправить"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/buttonPlayAudio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="193dp"
+        android:layout_marginTop="227dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="488dp"
+        android:backgroundTint="#DAEFF7"
+        android:foreground="@android:drawable/ic_media_pause"
+        android:scrollbarTrackHorizontal="@android:drawable/ic_media_pause"
+        android:scrollbarTrackVertical="@android:drawable/ic_media_pause"
+        android:text="Stop" />
+
+    <Button
+        android:id="@+id/buttonRewind"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="227dp"
+        android:layout_marginEnd="271dp"
+        android:layout_marginBottom="488dp"
+        android:backgroundTint="#DAEFF7"
+        android:foreground="@android:drawable/ic_media_rew"
+        android:text="Rewind" />
+
+    <Button
+        android:id="@+id/buttonForward"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="262dp"
+        android:layout_marginTop="227dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginBottom="486dp"
+        android:backgroundTint="#DAEFF7"
+        android:foreground="@android:drawable/ic_media_ff"
+        android:scrollbarTrackHorizontal="@android:drawable/ic_media_ff"
+        android:text="Forward" />
+
+    <com.example.inglih.AudioVisualizerView
+        android:id="@+id/visualizerView"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-4dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="577dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="193dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="520dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="383dp"
+        android:layout_height="59dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="380dp"
+        android:text="Прослушайте и ответе, куда следует                               отправиться  Джиму?"
+        android:textAlignment="center"
+        android:textSize="19sp" />
+
+</RelativeLayout>

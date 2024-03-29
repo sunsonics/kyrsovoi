@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#E5F8FD"
     android:backgroundTint="#E5F8FD"
+    android:foregroundTint="#E4F7FC"
     tools:context=".MainActivity6">
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -82,6 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Аудирование"
+        android:textColor="#285A7A"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,6 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Чтение"
+        android:textColor="#285A7A"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -171,4 +174,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.083" />
+
+    <TextView
+        android:id="@+id/textViewUserAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#DAEFF7"
+        android:backgroundTint="#E4F7FC"
+        android:text=" "
+        android:textColor="#285A7A"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

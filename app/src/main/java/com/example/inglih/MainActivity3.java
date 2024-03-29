@@ -19,28 +19,28 @@ public class MainActivity3 extends AppCompatActivity {
     private TextView textViewQuestionNumber;
 
     private String[] questions = {
-            "Как переводится слово 'apple'?",
-            "Как переводится слово 'work'?",
-            "Как переводится слово 'sky'?",
-            "Как переводится слово 'book'?",
-            "Как переводится слово 'tree'?",
-            "Как переводится слово 'travel'?",
-            "Как переводится слово 'sun'?",
-            "Как переводится слово 'table'?",
-            "Как переводится слово 'friend'?",
-            "Как переводится слово 'water'?"
+            "Как переводится слово 'bucket'?",
+            "Как переводится слово 'plane'?",
+            "Как переводится слово 'network'?",
+            "Как переводится слово 'extinguisher'?",
+            "Как переводится слово 'balloon'?",
+            "Как переводится слово 'manufacturer'?",
+            "Как переводится слово 'fork'?",
+            "Как переводится слово 'fishing rod'?",
+            "Как переводится слово 'government'?",
+            "Как переводится слово 'butterfly'?"
     };
     private String[][] correctAnswers = {
-            {"яблоко", "яблоки","яблочко"},
-            {"работа","работать"},
-            {"небо","Небо"},
-            {"книга", "книжка", "книжки"},
-            {"дерево", "древо"},
-            {"отдых", "путшествие"},
-            {"солнце", "солнышко"},
-            {"стол","таблица"},
-            {"друг", "приятель", "дружок"},
-            {"вода", "водичка"}
+            {"ведро", "вёдра", "ведёрко"},
+            {"самолёт"},
+            {"сеть"},
+            {"огнетушитель"},
+            {"воздушный шар", "шарик","воздушный шарик"},
+            {"производитель", "изготовитель"},
+            {"вилка", "вилочка"},
+            {"удочка", "спиннинг"},
+            {"правительство", "власть "},
+            {"бабочка"}
     };
     private int currentQuestionIndex = 0;
     private int totalQuestions = 0;
@@ -96,6 +96,10 @@ public class MainActivity3 extends AppCompatActivity {
                 Toast.makeText(this, "Ваш уровень английского: A1 Beginner", Toast.LENGTH_LONG).show();
                 // Блокируем ввод текста
                 isInputEnabled = false;
+                Intent intent = new Intent(MainActivity3.this, MainActivity6.class);
+                intent.putExtra("userLevel", "A1 Beginner"); // Замените "A1 Beginner" на фактический уровень
+                startActivity(intent);
+                finish();
             } else {
                 // Иначе переходим на новую активность
                 Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
@@ -113,6 +117,10 @@ public class MainActivity3 extends AppCompatActivity {
         if (!isInputEnabled) {
             // Если ввод текста заблокирован, не проверяем ответ
             Toast.makeText(this, "Ваш уровень английского: A1 Beginner. Ввод заблокирован.", Toast.LENGTH_LONG).show();
+            // Проверяем, что MainActivity6 существует, прежде чем запускать его
+              { // Порог ошибок
+
+            }
         } else {
             boolean isCorrect = false;
             for (String correctAnswer : correctAnswersForCurrentQuestion) {

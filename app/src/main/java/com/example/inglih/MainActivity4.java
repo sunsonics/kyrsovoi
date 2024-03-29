@@ -17,29 +17,30 @@ public class MainActivity4 extends AppCompatActivity {
     private EditText editTextAnswer;
     private Button buttonSubmit;
     private TextView textViewQuestionNumber;
-
+    private static final int REQUEST_CODE_MAIN_ACTIVITY_6 = 1;
     private String[] questions = {
-            "Переведите предложение: 'this is a book.'",
-            "Переведите предложение: 'i want to go home.'",
-            "Переведите предложение: 'she is a student.'",
-            "Переведите предложение: 'they are playing football.'",
-            "Переведите предложение: 'he has a cat.'"
+            "Переведите предложение: 'The man in front of me is having a great day.'",
+            "Переведите предложение: 'Go outside, the postman brought the letters.'",
+            "Переведите предложение: 'The criminals escaped from prison yesterday.'",
+            "Переведите предложение: 'Repetition is the mother of learning.'",
+            "Переведите предложение: 'I can't see anything without glasses.'"
     };
     private String[][] correctAnswers = {
-            {"это книга", "это книга", "книгу", "книге"},
-            {"я хочу пойти домой", "хочу пойти домой", "хочу домой", "домой хочу"},
-            {"она студентка", "студентка", "студент", "она студент","она ученик"},
-            {"они играют в футбол", "играют в футбол", "футбол играют", "в футбол играют"},
-            {"у него есть кот", "есть кот", "кот у него", "у него кот"}
+            {"У мужчины напротив меня отличный день", "У мужчины напротив меня хороший день"},
+            {"Выходи на улицу почтальон принес письма", "Почтальон принес письма выходи на улицу"},
+            {"Преступники вчера сбежали из тюрьмы", "Вчера преступники сбежали из тюрьмы", "Преступники сбежали из тюрьмы вчера"},
+            {"Повторение мать учения", "Мать учения повторение"},
+            {"Я ничего не вижу без очков", "Я без очков ничего не вижу "}
     };
     private int currentQuestionIndex = 0;
     private int totalQuestions = 0;
     private int incorrectAnswers = 0;
     private boolean isInputEnabled = true;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_main4);
 
         textViewQuestion = findViewById(R.id.textViewQuestion2);
         editTextAnswer = findViewById(R.id.editTextAnswer2);
@@ -47,17 +48,6 @@ public class MainActivity4 extends AppCompatActivity {
         textViewQuestionNumber = findViewById(R.id.textViewQuestionNumber);
 
         showQuestion();
-
-        // Находим кнопку button5
-        Button button5 = findViewById(R.id.button5);
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Переходим на MainActivity6
-                Intent intent = new Intent(MainActivity4.this, MainActivity6.class);
-                startActivity(intent);
-            }
-        });
 
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +58,6 @@ public class MainActivity4 extends AppCompatActivity {
     }
 
     private void showQuestion() {
-
         if (currentQuestionIndex < questions.length) {
             textViewQuestionNumber.setText("Вопрос " + (currentQuestionIndex + 1) + " из " + questions.length);
 
@@ -81,10 +70,14 @@ public class MainActivity4 extends AppCompatActivity {
                 Toast.makeText(this, "Ваш уровень английского: A2 Pre-Intermediate", Toast.LENGTH_LONG).show();
                 isInputEnabled = false;
                 Intent intent = new Intent(MainActivity4.this, MainActivity6.class);
+                intent.putExtra("userLevel", "A2 Pre-Intermediate");
                 startActivity(intent);
+                finish();
             } else {
                 Intent intent = new Intent(MainActivity4.this, MainActivity5.class);
+                intent.putExtra("userLevel", "Your level here"); // Здесь вы можете установить нужный уровень
                 startActivity(intent);
+                finish(); // Завершаем текущую активность
             }
         }
     }
@@ -118,4 +111,5 @@ public class MainActivity4 extends AppCompatActivity {
         editTextAnswer.setText("");
         showQuestion();
     }
+
 }

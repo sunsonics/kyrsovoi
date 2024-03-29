@@ -11,19 +11,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity11 extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
     private Button buttonPlayAudio;
     private Button buttonStopAudio;
+    private Button buttonRewind;
+    private Button buttonForward;
+    private Button button13;
     private SeekBar seekBar;
     private Handler handler = new Handler();
     private Visualizer visualizer;
     private AudioVisualizerView visualizerView;
 
-    private EditText[] editTextAnswers = new EditText[10]; // Массив для всех ответов
 
+    private TextView[] textViewQuestions = new TextView[10]; // Массив для всех ответов
+    private EditText[] editTextAnswers = new EditText[10];
     private String[] questions;
     private String[][] answers;
     private int currentQuestionIndex = 0; // Текущий индекс вопроса
@@ -34,16 +40,16 @@ public class MainActivity11 extends AppCompatActivity {
         setContentView(R.layout.activity_main11);
 
         questions = new String[]{
-                "1) a square in Brancusi’s sculpture is made of oak.  ",
-                "2) Brancusi likes to demonstrate contrasting objects.  ",
-                "3) it’s difficult to guess the name of the sculpture.  ",
-                "4) Brancusi’s bird is crying.  ",
-                "5) the bird opens its mouth to sing.  ",
-                "6) many Mondrian’s paintings are very confusing. ",
-                "7) Mondrian’s painting is like a closed window.  ",
-                "8) there is a wide variety of bright colours in this painting.  ",
-                "9) Mondrian signed the painting with his initials.  ",
-                "10) Mondrian also wrote some music.  "
+                "1) a square in Brancusi’s sculpture is made of oak.     ",
+                "2) Brancusi likes to demonstrate contrasting objects.    ",
+                "3) it’s difficult to guess the name of the sculpture.    ",
+                "4) Brancusi’s bird is crying.     ",
+                "5) the bird opens its mouth to sing.     ",
+                "6) many Mondrian’s paintings are very confusing.    ",
+                "7) Mondrian’s painting is like a closed window.     ",
+                "8) there is a wide variety of bright colours in this painting.     ",
+                "9) Mondrian signed the painting with his initials.     ",
+                "10) Mondrian also wrote some music.     "
         };
 
         answers = new String[][]{
@@ -61,21 +67,55 @@ public class MainActivity11 extends AppCompatActivity {
 
         // Инициализация всех EditText для ответов
         for (int i = 0; i < 10; i++) {
-            int editTextId = getResources().getIdentifier("editTextAnswer" + (i + 1), "id", getPackageName());
-            editTextAnswers[i] = findViewById(editTextId);
-        }
+            int questionId = getResources().getIdentifier("textViewQuestion" + (i + 1), "id", getPackageName());
+            textViewQuestions[i] = findViewById(questionId);
 
-        // Установка текста вопросов для соответствующих EditText
-        for (int i = 0; i < questions.length; i++) {
-            editTextAnswers[i].setText(questions[i]);
+            int answerId = getResources().getIdentifier("editTextAnswer" + (i + 1), "id", getPackageName());
+            editTextAnswers[i] = findViewById(answerId);
+
+            // Устанавливаем текст вопросов
+            textViewQuestions[i].setText(questions[i]);
         }
 
         buttonPlayAudio = findViewById(R.id.buttonPlayAudio);
-        buttonStopAudio = findViewById(R.id.buttonStopAudio);
+        buttonStopAudio = findViewById(R.id.buttonStopAudio2);
         visualizerView = findViewById(R.id.visualizerView);
+        buttonRewind = findViewById(R.id.buttonRewind);
+        buttonForward = findViewById(R.id.buttonForward);
         seekBar = findViewById(R.id.seekBar);
         setupVisualizer();
-        //updateQuestionAndAnswers(); // Убран вызов метода
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                // Если изменение было инициировано пользователем, перематываем аудио к новому положению
+                if (fromUser && mediaPlayer != null && mediaPlayer.isPlaying()) {
+                    mediaPlayer.seekTo(progress);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // Не используется, но должен быть реализован в соответствии с интерфейсом
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // Не используется, но должен быть реализован в соответствии с интерфейсом
+            }
+        });
+        buttonRewind.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rewindAudio(15000); // перемотка на 15 секунд назад
+            }
+        });
+
+        buttonForward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                forwardAudio(15000); // перемотка на 15 секунд вперед
+            }
+        });
 
         buttonPlayAudio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +128,7 @@ public class MainActivity11 extends AppCompatActivity {
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //checkAnswers(); // Убран вызов метода
+                checkAnswers();
             }
         });
 
@@ -99,7 +139,15 @@ public class MainActivity11 extends AppCompatActivity {
             }
         });
 
-
+        button13 = findViewById(R.id.button13);
+        button13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Переходим на MainActivity6
+                Intent intent = new Intent(MainActivity11.this, MainActivity6.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -121,6 +169,7 @@ public class MainActivity11 extends AppCompatActivity {
             }, Visualizer.getMaxCaptureRate() / 2, true, false);
         }
     }
+
 
     private void playAudio() {
         if (mediaPlayer != null && !mediaPlayer.isPlaying()) {
@@ -150,6 +199,53 @@ public class MainActivity11 extends AppCompatActivity {
         if (mediaPlayer != null && mediaPlayer.isPlaying()) {
             mediaPlayer.pause();
             visualizer.setEnabled(false);
+        }
+    }
+
+    private void checkAnswers() {
+        int correctAnswers = 0;
+
+        // Перебираем все вопросы и ответы
+        for (int i = 0; i < questions.length; i++) {
+            String userAnswer = editTextAnswers[i].getText().toString().trim(); // Убираем лишние пробелы
+            String correctAnswer = answers[i][0].trim(); // Правильный ответ
+
+            // Сравниваем ответ пользователя с правильным ответом, игнорируя регистр
+            if (userAnswer.equalsIgnoreCase(correctAnswer)) {
+                correctAnswers++;
+            }
+        }
+
+        // Выводим результат проверки
+        int totalQuestions = questions.length;
+        Toast.makeText(MainActivity11.this, "Правильных ответов: " + correctAnswers + "/" + totalQuestions, Toast.LENGTH_SHORT).show();
+
+        // Блокируем ввод после отправки сообщения о результатах
+        for (int i = 0; i < editTextAnswers.length; i++) {
+            editTextAnswers[i].setEnabled(false);
+        }
+    }
+
+    private void rewindAudio(int milliseconds) {
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            int currentPosition = mediaPlayer.getCurrentPosition();
+            int newPosition = currentPosition - milliseconds;
+            if (newPosition < 0) {
+                newPosition = 0;
+            }
+            mediaPlayer.seekTo(newPosition);
+        }
+    }
+
+    private void forwardAudio(int milliseconds) {
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            int currentPosition = mediaPlayer.getCurrentPosition();
+            int newPosition = currentPosition + milliseconds;
+            int duration = mediaPlayer.getDuration();
+            if (newPosition > duration) {
+                newPosition = duration;
+            }
+            mediaPlayer.seekTo(newPosition);
         }
     }
 
