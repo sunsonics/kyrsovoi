@@ -15,6 +15,7 @@ public class MainActivity6 extends AppCompatActivity {
 
     private TextView textViewUserAnswer;
     private Button buttonSubmit4;
+    private Button button7;
     private static final String PREFS_NAME = "MyPrefs";
     private static final String USER_LEVEL_KEY = "userLevel";
     private static final int REQUEST_CODE_MAIN_ACTIVITY_3 = 1;
@@ -74,6 +75,14 @@ public class MainActivity6 extends AppCompatActivity {
             });
         }
 
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Создаем намерение для запуска MainActivity8
+                Intent intent = new Intent(MainActivity6.this, MainActivity12.class);
+                startActivity(intent); // Запускаем MainActivity8
+            }
+        });
 
         if (buttonSubmit3 != null) {
             buttonSubmit3.setOnClickListener(new View.OnClickListener() {

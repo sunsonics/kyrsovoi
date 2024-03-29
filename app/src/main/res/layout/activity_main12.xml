@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5F8FD"
+    tools:context=".MainActivity5">
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="70dp"
+                android:layout_height="47dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:foreground="@android:drawable/ic_menu_close_clear_cancel"
+                android:text="Forward" />
+
+            <TextView
+                android:id="@+id/textViewQuestionNumber"
+                android:layout_width="396dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="Чтение"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="There was a small shop in a little street in an old town. In the shop there were beautiful things made of silver and gold. The small shop had a door that opened on the little street. The shopkeeper was standing at the open door.\n\n“Come and buy! Come and buy!” called the shopkeeper. “Come into my shop and see all the beautiful things!” again he called. “Come in!\n\nI shall show you beautiful things made of silver and gold.”\n\nOne day the shopkeeper had to go away to the king’s palace. The king wanted a beautiful gold ring and a silver cup from the shop. The shopkeeper called the boy who worked for him. “I’m going to the king’s palace,” he said. “You must stay here. Do not leave the door of the shop whatever happens. Do you understand?”\n\n“Yes, I understand,” said the boy.\n\nThe shopkeeper went away, and soon he came to the king’s palace. He gave the king the ring and the cup. Then he went home. Soon he was back at his shop. He stopped and looked up in astonishment. “What is this?” he cried. “Why are so many people going into my shop?” Then the shopkeeper saw that the door of the shop was gone and so was the boy who worked for him.\n\nJust then, the shopkeeper saw the boy. He was in the street near the shop. The boy had the shop door on his back. He was standing in the square looking at some men who were doing tricks.\n\nThe shopkeeper ran to the boy. “I told you not to leave my shop,” he cried.\n\n“No,” said the boy. “You told me not to leave the door. I did just as you said. I did not leave the door. I have the door here with me.”"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/buttonSubmit2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#57B8F8"
+                android:text="Отправить"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewQuestion1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="What did the shopkeeper sell? food / things"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/editTextAnswer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/textViewQuestion2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:hint="What were the things made of? glass / metal" />
+            <EditText
+                android:id="@+id/editTextAnswer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/textViewQuestion3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:hint="Where did the shopkeeper go one day? market / palace" />
+
+            <EditText
+                android:id="@+id/editTextAnswer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/textViewQuestion4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:hint="What did the shopkeeper tell the boy to do? not to leave the door / not to leave the shop " />
+            <EditText
+                android:id="@+id/editTextAnswer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/textViewQuestion5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:hint="What did the shopkeeper see when he came back? the shop was closed / the shop was open " />
+            <EditText
+                android:id="@+id/editTextAnswer5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/textViewQuestion6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:hint="Where was the boy standing? in the shop / in the square" />
+            <EditText
+                android:id="@+id/editTextAnswer6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/textViewQuestion7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:hint="Did the boy understand the shopkeeper’s words exactly? yes / no" />
+            <EditText
+                android:id="@+id/editTextAnswer7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

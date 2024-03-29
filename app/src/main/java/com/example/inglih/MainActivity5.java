@@ -531,7 +531,7 @@ public class MainActivity5 extends AppCompatActivity {
             String questionNumberText = "Вопрос " + (currentQuestionIndex + 1) + " из " + questions.length;
             textViewQuestionNumber.setText(questionNumberText);
         } else {
-            Toast.makeText(this, "No more questions available", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Больше вопросов нет", Toast.LENGTH_SHORT).show();
         }
     }
 

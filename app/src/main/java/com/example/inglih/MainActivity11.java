@@ -203,26 +203,42 @@ public class MainActivity11 extends AppCompatActivity {
     }
 
     private void checkAnswers() {
-        int correctAnswers = 0;
+        int totalQuestions = questions.length;
+        int correctAnswersCount = 0;
 
-        // Перебираем все вопросы и ответы
-        for (int i = 0; i < questions.length; i++) {
-            String userAnswer = editTextAnswers[i].getText().toString().trim(); // Убираем лишние пробелы
-            String correctAnswer = answers[i][0].trim(); // Правильный ответ
+        // Переменная для отслеживания правильных и неправильных ответов
+        boolean[] isCorrectAnswer = new boolean[totalQuestions];
 
-            // Сравниваем ответ пользователя с правильным ответом, игнорируя регистр
+        // Проверить ответы пользователя
+        for (int i = 0; i < totalQuestions; i++) {
+            String userAnswer = editTextAnswers[i].getText().toString().trim();
+            String correctAnswer = answers[i][0].trim();
+
+            // Сравнить ответ пользователя с правильным ответом, игнорируя регистр
             if (userAnswer.equalsIgnoreCase(correctAnswer)) {
-                correctAnswers++;
+                correctAnswersCount++;
+                isCorrectAnswer[i] = true;
+            } else {
+                isCorrectAnswer[i] = false;
             }
         }
 
-        // Выводим результат проверки
-        int totalQuestions = questions.length;
-        Toast.makeText(MainActivity11.this, "Правильных ответов: " + correctAnswers + "/" + totalQuestions, Toast.LENGTH_SHORT).show();
+        // Вывести результаты проверки
+        String resultMessage = "Правильные ответы: " + correctAnswersCount + "/" + totalQuestions;
+        Toast.makeText(MainActivity11.this, resultMessage, Toast.LENGTH_SHORT).show();
 
-        // Блокируем ввод после отправки сообщения о результатах
-        for (int i = 0; i < editTextAnswers.length; i++) {
-            editTextAnswers[i].setEnabled(false);
+        // Обновить цвет текста вопросов в зависимости от правильности ответов
+        for (int i = 0; i < totalQuestions; i++) {
+            if (isCorrectAnswer[i]) {
+                textViewQuestions[i].setTextColor(getResources().getColor(android.R.color.holo_green_dark));
+            } else {
+                textViewQuestions[i].setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+            }
+        }
+
+        // Блокировать ввод после отправки сообщения о результатах
+        for (EditText editText : editTextAnswers) {
+            editText.setEnabled(false);
         }
     }
 
