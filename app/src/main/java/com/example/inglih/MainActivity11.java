@@ -40,14 +40,14 @@ public class MainActivity11 extends AppCompatActivity {
         setContentView(R.layout.activity_main11);
 
         questions = new String[]{
-                "1) a square in Brancusi’s sculpture is made of oak.     ",
+                "1) A square in Brancusi’s sculpture is made of oak.     ",
                 "2) Brancusi likes to demonstrate contrasting objects.    ",
-                "3) it’s difficult to guess the name of the sculpture.    ",
+                "3) It’s difficult to guess the name of the sculpture.    ",
                 "4) Brancusi’s bird is crying.     ",
-                "5) the bird opens its mouth to sing.     ",
-                "6) many Mondrian’s paintings are very confusing.    ",
+                "5) The bird opens its mouth to sing.     ",
+                "6) Many Mondrian’s paintings are very confusing.    ",
                 "7) Mondrian’s painting is like a closed window.     ",
-                "8) there is a wide variety of bright colours in this painting.     ",
+                "8) There is a wide variety of bright colours in this painting.     ",
                 "9) Mondrian signed the painting with his initials.     ",
                 "10) Mondrian also wrote some music.     "
         };
