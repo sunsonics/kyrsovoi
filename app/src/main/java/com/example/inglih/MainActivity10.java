@@ -75,7 +75,7 @@ public class MainActivity10 extends AppCompatActivity {
         checkboxOption4 = findViewById(R.id.checkbox_option4);
 
         buttonPlayAudio = findViewById(R.id.buttonPlayAudio);
-        buttonStopAudio = findViewById(R.id.buttonPlayAudio);
+        buttonStopAudio = findViewById(R.id.buttonStopAudio);
         buttonRewind = findViewById(R.id.buttonRewind);
         buttonForward = findViewById(R.id.buttonForward);
         visualizerView = findViewById(R.id.visualizerView);

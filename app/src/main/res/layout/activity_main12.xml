@@ -63,6 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:background="#E4F7FC"
                 android:text="There was a small shop in a little street in an old town. In the shop there were beautiful things made of silver and gold. The small shop had a door that opened on the little street. The shopkeeper was standing at the open door.\n\n“Come and buy! Come and buy!” called the shopkeeper. “Come into my shop and see all the beautiful things!” again he called. “Come in!\n\nI shall show you beautiful things made of silver and gold.”\n\nOne day the shopkeeper had to go away to the king’s palace. The king wanted a beautiful gold ring and a silver cup from the shop. The shopkeeper called the boy who worked for him. “I’m going to the king’s palace,” he said. “You must stay here. Do not leave the door of the shop whatever happens. Do you understand?”\n\n“Yes, I understand,” said the boy.\n\nThe shopkeeper went away, and soon he came to the king’s palace. He gave the king the ring and the cup. Then he went home. Soon he was back at his shop. He stopped and looked up in astonishment. “What is this?” he cried. “Why are so many people going into my shop?” Then the shopkeeper saw that the door of the shop was gone and so was the boy who worked for him.\n\nJust then, the shopkeeper saw the boy. He was in the street near the shop. The boy had the shop door on his back. He was standing in the square looking at some men who were doing tricks.\n\nThe shopkeeper ran to the boy. “I told you not to leave my shop,” he cried.\n\n“No,” said the boy. “You told me not to leave the door. I did just as you said. I did not leave the door. I have the door here with me.”"
                 android:textAlignment="center"
                 android:textSize="16sp" />
@@ -75,6 +76,7 @@
                 android:layout_marginTop="8dp"
                 android:backgroundTint="#57B8F8"
                 android:text="Отправить"
+                android:textColor="#FBFBFB"
                 android:textSize="18sp" />
 
             <TextView

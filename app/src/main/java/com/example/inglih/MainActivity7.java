@@ -22,30 +22,30 @@ public class MainActivity7 extends AppCompatActivity {
 
     private String[] questions = {
             "Choose the correct form of the verb: She ___ (go) to the store every day.",
-            "Which sentence is grammatically correct?\n\nA) I have went to the store yesterday.\nB) I have gone to the store yesterday.",
+            "Which sentence is grammatically correct?\n\nA) I haven't gone to the store yet.\nB) I didn't went to the store yesterday.",
             "Identify the part of speech for the word 'quickly' in the sentence: He ran quickly to catch the bus.",
             "Choose the correct form of the comparative adjective: This book is ___ (interesting) than that one.",
             "Which sentence is grammatically correct?\n\nA) She don't like coffee.\nB) She doesn't like coffee.",
             // Добавленные вопросы и объяснения
             "Choose the correct form of the verb: They ___ (eat) dinner when I arrived.",
-            "Which sentence is grammatically correct?\n\nA) I have did my homework yesterday.\nB) I have done my homework yesterday.",
-            "Identify the part of speech for the word 'always' in the sentence: She always arrives on time.",
+            "Which sentence is grammatically correct?\n\nA) I didn't had my homework yesterday.\nB) I haven't done my homework yet.",
+            "Identify the part of speech for the word 'arrives' in the sentence: She always arrives on time.",
             "Choose the correct form of the superlative adjective: This is ___ (big) building in the city.",
-            "Which sentence is grammatically correct?\n\nA) He don't want to go to the party.\nB) He doesn't want to go to the party."
+            "Which sentence is grammatically correct?\n\nA) He doesn't want to go to the party.\nB) He don't want to go to the party."
     };
 
     private String[] correctAnswers = {
             "goes",
-            "B",
+            "A",
             "adverb",
             "more interesting",
             "B",
 
-            "ate",
+            "were eating",
             "B",
-            "adverb",
+            "verb",
             "the biggest",
-            "B"
+            "A"
     };
 
     private String[] explanations = {

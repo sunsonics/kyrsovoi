@@ -5,7 +5,7 @@
     <string-array name="questions">
         <item>Прослушайте и ответьте, куда следует отправиться Джиму?</item>
         <item>Что случилось с Джимом?</item>
-        <item>Каким видом деятельности занимается Дэвид?</item>
+        <item>Какая профессия у Дэвида?</item>
         <item>Какую награду получила Мэри?</item>
         <item>О чём попросили Мари?</item>
 
@@ -25,10 +25,10 @@
         <item>он победил в соревнованиях</item>
     </string-array>
     <string-array name="answers3">
-        <item>информационным</item>
-        <item>научным</item>
-        <item>творческим</item>
-        <item>трудовым</item>
+        <item>музыкант</item>
+        <item>гравёр</item>
+        <item>актёр</item>
+        <item>писатель</item>
     </string-array>
     <string-array name="answers4">
         <item>нобелевскую премию</item>

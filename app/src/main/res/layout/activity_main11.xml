@@ -18,6 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#E4F7FC"
             android:orientation="vertical">
 
             <Button
@@ -66,9 +67,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:layout_marginTop="8dp">
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button2"
@@ -162,107 +163,115 @@
             <EditText
                 android:id="@+id/editTextAnswer1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textViewQuestion2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="19sp"
-                android:hint="Brancusi likes to demonstrate contrasting objects." />
+                android:hint="Brancusi likes to demonstrate contrasting objects."
+                android:textSize="19sp" />
+
             <EditText
                 android:id="@+id/editTextAnswer2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textViewQuestion3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="19sp"
-                android:hint="it’s difficult to guess the name of the sculpture." />
+                android:hint="it’s difficult to guess the name of the sculpture."
+                android:textSize="19sp" />
 
             <EditText
                 android:id="@+id/editTextAnswer3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textViewQuestion4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="19sp"
-                android:hint="Brancusi’s bird is crying. " />
+                android:hint="Brancusi’s bird is crying. "
+                android:textSize="19sp" />
+
             <EditText
                 android:id="@+id/editTextAnswer4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textViewQuestion5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="19sp"
-                android:hint="the bird opens its mouth to sing. " />
+                android:hint="the bird opens its mouth to sing. "
+                android:textSize="19sp" />
+
             <EditText
                 android:id="@+id/editTextAnswer5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textViewQuestion6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="19sp"
-                android:hint="many Mondrian’s paintings are very confusing." />
+                android:hint="many Mondrian’s paintings are very confusing."
+                android:textSize="19sp" />
+
             <EditText
                 android:id="@+id/editTextAnswer6"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textViewQuestion7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="19sp"
-                android:hint="Mondrian’s painting is like a closed window." />
+                android:hint="Mondrian’s painting is like a closed window."
+                android:textSize="19sp" />
+
             <EditText
                 android:id="@+id/editTextAnswer7"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textViewQuestion8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="19sp"
-                android:hint="there is a wide variety of bright colours in this painting." />
+                android:hint="there is a wide variety of bright colours in this painting."
+                android:textSize="19sp" />
+
             <EditText
                 android:id="@+id/editTextAnswer8"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textViewQuestion9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="19sp"
-                android:hint="Mondrian signed the painting with his initials." />
+                android:hint="Mondrian signed the painting with his initials."
+                android:textSize="19sp" />
+
             <EditText
                 android:id="@+id/editTextAnswer9"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textViewQuestion10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="19sp"
-                android:hint="Mondrian also wrote some music. " />
+                android:hint="Mondrian also wrote some music. "
+                android:textSize="19sp" />
+
             <EditText
                 android:id="@+id/editTextAnswer10"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
     </ScrollView>

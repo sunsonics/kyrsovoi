@@ -34,7 +34,7 @@ public class MainActivity5 extends AppCompatActivity {
     private int currentQuestionNumber = 1;
     private TextView textViewQuestionNumber;
     private static final int REQUEST_CODE_MAIN_ACTIVITY_5 = 5;
-
+    private TextView textView5;
     private boolean isSeekBarTracking = false;
     private int[] questionAudios = {R.raw.bank, R.raw.noga, R.raw.pevez, R.raw.nob, R.raw.math};
 
@@ -60,7 +60,7 @@ public class MainActivity5 extends AppCompatActivity {
         answers[2] = getResources().getStringArray(R.array.answers3);
         answers[3] = getResources().getStringArray(R.array.answers4);
         answers[4] = getResources().getStringArray(R.array.answers5);
-
+        textView5 = findViewById(R.id.textView5);
         textViewQuestion = findViewById(R.id.textView3);
         textViewQuestionNumber = findViewById(R.id.textViewQuestionNumber);
         checkboxOption1 = findViewById(R.id.checkbox_option1);
@@ -145,44 +145,28 @@ public class MainActivity5 extends AppCompatActivity {
         checkboxOption1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    checkboxOption2.setChecked(false);
-                    checkboxOption3.setChecked(false);
-                    checkboxOption4.setChecked(false);
-                }
+
             }
         });
 
         checkboxOption2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    checkboxOption1.setChecked(false);
-                    checkboxOption3.setChecked(false);
-                    checkboxOption4.setChecked(false);
-                }
+
             }
         });
 
         checkboxOption3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    checkboxOption1.setChecked(false);
-                    checkboxOption2.setChecked(false);
-                    checkboxOption4.setChecked(false);
-                }
+
             }
         });
 
         checkboxOption4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    checkboxOption1.setChecked(false);
-                    checkboxOption2.setChecked(false);
-                    checkboxOption3.setChecked(false);
-                }
+
             }
         });
     }
@@ -213,7 +197,8 @@ public class MainActivity5 extends AppCompatActivity {
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
-                    visualizer.setEnabled(false); // Отключаем визуализацию при завершении воспроизведения
+                    visualizer.setEnabled(false);
+                    seekBar.setProgress(0);
                 }
             });
             mediaPlayer.start();
@@ -238,7 +223,7 @@ public class MainActivity5 extends AppCompatActivity {
             mediaPlayer = null;
         }
 
-        seekBar.setProgress(0);
+
 
         mediaPlayer = MediaPlayer.create(this, R.raw.noga);
 
@@ -268,6 +253,8 @@ public class MainActivity5 extends AppCompatActivity {
             }
         });
 
+        updateQuestionAndAnswers(); // Обновляем вопрос и ответы перед началом воспроизведения аудио
+
         mediaPlayer.start();
         visualizer.setEnabled(true);
         seekBar.setMax(mediaPlayer.getDuration()); // Установка максимального значения для нового аудиофайла
@@ -289,7 +276,6 @@ public class MainActivity5 extends AppCompatActivity {
             mediaPlayer = null;
         }
 
-        seekBar.setProgress(0);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.pevez);
 
@@ -340,7 +326,7 @@ public class MainActivity5 extends AppCompatActivity {
             mediaPlayer = null;
         }
 
-        seekBar.setProgress(0);
+
 
         mediaPlayer = MediaPlayer.create(this, R.raw.nob);
 
@@ -391,7 +377,7 @@ public class MainActivity5 extends AppCompatActivity {
             mediaPlayer = null;
         }
 
-        seekBar.setProgress(0);
+
 
         mediaPlayer = MediaPlayer.create(this, R.raw.math);
 
@@ -481,22 +467,21 @@ public class MainActivity5 extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
-                if (!isSeekBarTracking && mediaPlayer != null && fromUser) {
-                    mediaPlayer.seekTo(progress);
+                if (fromUser) {
+                    if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+                        mediaPlayer.seekTo(progress);
+                    }
                 }
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
-                isTracking = true;
+                isSeekBarTracking = true;
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
-                if (mediaPlayer != null) {
+                if (mediaPlayer != null && mediaPlayer.isPlaying()) {
                     mediaPlayer.seekTo(seekBar.getProgress());
                 }
                 isSeekBarTracking = false;
@@ -530,13 +515,20 @@ public class MainActivity5 extends AppCompatActivity {
 
             String questionNumberText = "Вопрос " + (currentQuestionIndex + 1) + " из " + questions.length;
             textViewQuestionNumber.setText(questionNumberText);
+
+            // Добавим проверку на воспроизведение аудио перед сбросом прогресса стекбара
+            if (mediaPlayer != null && !mediaPlayer.isPlaying()) {
+                seekBar.setProgress(0); // Сбрасываем прогресс стекбара в начало только если аудио не воспроизводится
+            }
         } else {
             Toast.makeText(this, "Больше вопросов нет", Toast.LENGTH_SHORT).show();
         }
+        seekBar.setProgress(0);
     }
 
     private void checkAnswers() {
         int correctAnswersCount = 0; // Count of correct answers
+        int selectedOptionsCount = 0;
 
         // Get the selected options by the user
         boolean option1Checked = checkboxOption1.isChecked();
@@ -558,11 +550,13 @@ public class MainActivity5 extends AppCompatActivity {
                 else // If the answer is incorrect
                     incorrectAnswersCount++;
                 break;
-            case 2: // Third question
-                if (option3Checked) // If the answer is correct
-                    correctAnswersCount++;
-                else // If the answer is incorrect
-                    incorrectAnswersCount++;
+            case 2: // Третий вопрос
+                // Если выбраны именно два чекбокса: checkboxOption1 и checkboxOption3, и другие не выбраны
+                if (option1Checked && !option2Checked && option3Checked && !option4Checked) {
+                    correctAnswersCount++; // Увеличиваем счетчик правильных ответов
+                } else {
+                    incorrectAnswersCount++; // Увеличиваем счетчик неправильных ответов
+                }
                 break;
             case 3: // Fourth question
                 if (option1Checked) // If the answer is correct
@@ -578,6 +572,7 @@ public class MainActivity5 extends AppCompatActivity {
                 break;
             default:
                 break;
+
         }
 
         // If the user has answered incorrectly three or more times, redirect to MainActivity6
@@ -589,16 +584,18 @@ public class MainActivity5 extends AppCompatActivity {
             Toast.makeText(this, "Ваш уровень B1 Intermediate.", Toast.LENGTH_SHORT).show();
         } else {
             if (currentQuestionIndex < questions.length - 1) {
-                currentQuestionIndex++; // Move to the next question
-                updateQuestionAndAnswers(); // Update the question and answer options
-                seekBar.setProgress(0); // Reset the audio progress
+                currentQuestionIndex++; // Переходим к следующему вопросу
+                updateQuestionAndAnswers(); // Обновляем вопрос и варианты ответов
+                seekBar.setProgress(0); // Сбрасываем прогресс аудио
             } else {
-                // All questions answered correctly, move to MainActivity7
+                // Все вопросы отвечены правильно, переходим к MainActivity7
                 Intent intent = new Intent(MainActivity5.this, MainActivity7.class);
                 startActivity(intent);
-                finish(); // Close the current activity to prevent the user from returning to the questions
+                finish(); // Закрываем текущую активность, чтобы пользователь не мог вернуться к вопросам
             }
         }
+
+
     }
     @Override
     protected void onStop() {
